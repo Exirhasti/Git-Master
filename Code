@@ -1,0 +1,98 @@
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+class Student {
+    private String firstName;
+    private String lastName;
+    private int studentId;
+
+    public Student(String firstName, String lastName, int studentId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.studentId = studentId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", studentId=" + studentId +
+                '}';
+    }
+}
+
+public class StudentSorter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the number of students
+        System.out.print("Enter the number of students: ");
+        int numberOfStudents = scanner.nextInt();
+        scanner.nextLine();  // Consume newline
+
+        // Create an array of students
+        Student[] students = new Student[numberOfStudents];
+
+        // Get each student's information
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.print("Enter first name of student " + (i + 1) + ": ");
+            String firstName = scanner.nextLine();
+            System.out.print("Enter last name of student " + (i + 1) + ": ");
+            String lastName = scanner.nextLine();
+            System.out.print("Enter student ID of student " + (i + 1) + ": ");
+            int studentId = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
+
+            students[i] = new Student(firstName, lastName, studentId);
+        }
+
+        // Ask the user how they want to sort the students
+        System.out.println("\nChoose sorting criteria:");
+        System.out.println("1. First Name");
+        System.out.println("2. Last Name");
+        System.out.println("3. Student ID");
+        System.out.print("Enter your choice (1, 2, or 3): ");
+        int choice = scanner.nextInt();
+
+        // Sort based on the user's choice
+        switch (choice) {
+            case 1:
+                Arrays.sort(students, Comparator.comparing(Student::getFirstName));
+                System.out.println("\nSorted by First Name:");
+                break;
+            case 2:
+                Arrays.sort(students, Comparator.comparing(Student::getLastName));
+                System.out.println("\nSorted by Last Name:");
+                break;
+            case 3:
+                Arrays.sort(students, Comparator.comparingInt(Student::getStudentId));
+                System.out.println("\nSorted by Student ID:");
+                break;
+            default:
+                System.out.println("Invalid choice. No sorting applied.");
+                break;
+        }
+
+        // Display the sorted list of students
+        for (Student student : students) {
+            System.out.println(student);
+        }
+
+        scanner.close();
+    }
+}

@@ -44,7 +44,8 @@ public class StudentSorter {
                 new Student("Arman", "GhorbanPour", 80),
 <<<<<<< HEAD
                 new Student("Tina" , "Baouj" , 72 ),
-                new Student("Parsa" , "Moradi" , 49 )
+                new Student("Parsa" , "Moradi" , 49 ),
+                new student("Parmida", "Ahangari", 11)
             };
 =======
                 

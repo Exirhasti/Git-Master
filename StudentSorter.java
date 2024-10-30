@@ -42,9 +42,8 @@ public class StudentSorter {
                 new Student("Kimia", "Sedaghati", 39),
                 new Student("Golsa", "Saberi", 96),
                 new Student("Arman", "GhorbanPour", 80),
-                new Student("Tina" , "Bauoj" , 70 ),
-                new Student("Parsa , "Moradi" , 49 )
-
+                new Student("Tina" , "Baouj" , 72 ),
+                new Student("Parsa" , "Moradi" , 49 )
             };
 
         // Sort by first name

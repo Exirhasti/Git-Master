@@ -41,8 +41,11 @@ public class StudentSorter {
                 new Student("Mahak", "Mohammadi", 46),
                 new Student("Kimia", "Sedaghati", 39),
                 new Student("Golsa", "Saberi", 96),
-                new Student("Arman", "GhorbanPour", 80)
-        };
+                new Student("Arman", "GhorbanPour", 80),
+                new Student("Tina" , "Bauoj" , 70 ),
+                new Student("Parsa , "Moradi" , 49 )
+
+            };
 
         // Sort by first name
         Arrays.sort(students, Comparator.comparing(Student::getFirstName));
@@ -66,3 +69,4 @@ public class StudentSorter {
         }
     }
 }
+
